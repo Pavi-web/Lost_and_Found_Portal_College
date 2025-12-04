@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>College Lost & Found Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>🎒 College Lost & Found Portal</h1>
+            <p>Post lost or found items and help your friends get their belongings back.</p>
+        </header>
+        <main>
+            <section class="card">
+                <h2>Add a Lost / Found Item</h2>
+                <form id="itemForm">
+                    <div class="form-row-inline">
+                        <div>
+                            <label for="type">Type</label>
+                            <select id="type" required>
+                                <option value="">--Select--</option>
+                                <option value="lost">Lost</option>
+                                <option value="found">Found</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="title">Item Title</label>
+                            <input type="text" id="title" placeholder="E.g. Black Wallet, ID Card" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label for="description">Description</label>
+                        <textarea id="description" rows="2" placeholder="Color, brand, any details..."
+                            required></textarea>
+                    </div>
+                    <div class="form-row-inline">
+                        <div>
+                            <label for="location">Location (Lost/Found at)</label>
+                            <input type="text" id="location" placeholder="E.g. Canteen, CSE Block" required>
+                        </div>
+                        <div>
+                            <label for="date">Date</label>
+                            <input type="date" id="date" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label for="contact">Contact Info</label>
+                        <input type="text" id="contact" placeholder="Phone / Email / Insta ID" required>
+                    </div>
+                    <div class="buttons">
+                        <button type="submit" class="btn primary">Post Item</button>
+                        <button type="button" id="clearAllBtn" class="btn danger">Clear All Posts</button>
+                    </div>
+                    <p id="formMessage" class="message"></p>
+                </form>
+            </section>
+            <section class="card">
+                <h2>Browse Posts</h2>
+                <div class="filters">
+                    <select id="filterType">
+                        <option value="all">All</option>
+                        <option value="lost">Lost Only</option>
+                        <option value="found">Found Only</option>
+                    </select>
+                    <input type="text" id="searchInput" placeholder="Search by title, location, description...">
+                </div>
+                <div id="postsContainer" class="posts-container">
+                </div>
+                <p id="emptyMessage" class="empty-message"></p>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
